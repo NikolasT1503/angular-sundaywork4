@@ -1,0 +1,17 @@
+<h1>Реактив форм</h1>
+<form [formGroup]="form">
+    <p>
+        <input type="text" formControlName="name">
+    </p>
+    <div formArrayName="phones">
+        <ul *ngFor="let phone of getPhones.controls; let i=index">
+            <li>
+                <input type="text" [formControlName]="i">
+            </li>
+        </ul>
+    </div>
+    <pre> {{form.value | json}}</pre>
+
+</form>
+
+
